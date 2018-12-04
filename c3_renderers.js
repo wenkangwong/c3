@@ -201,7 +201,7 @@
             }
           },
           legend: {
-        			position: 'right'
+        			position: 'bottom'
     			},
           data: {
             type: chartOpts.type,        

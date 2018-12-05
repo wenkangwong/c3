@@ -1,5 +1,3 @@
-
-
 (function() {
   var callWithJQuery;
 	hasProp = {}.hasOwnProperty;	
@@ -201,7 +199,7 @@
             }
           },
           legend: {
-        			position: 'bottom'
+        			position: 'right'
     			},
           data: {
             type: chartOpts.type,        

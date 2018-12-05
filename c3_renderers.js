@@ -156,9 +156,9 @@
             titleText += " " + opts.localeStrings.by + " " + groupByTitle;
           }
         }
-        title = $("<p>", {
-          style: "text-align: center; font-weight: bold"
-        });
+        //title = $("<p>", {
+        //  style: "text-align: center; font-weight: bold"
+        // });
         title.text(titleText);
         formatter = pivotData.getAggregator([], []).format;
         params = {

@@ -1,7 +1,6 @@
 (function() {
   var callWithJQuery;
-	hasProp = {}.hasOwnProperty;	
-     
+
   callWithJQuery = function(pivotModule) {
     if (typeof exports === "object" && typeof module === "object") {
       return pivotModule(require("jquery"), require("c3"));
@@ -19,20 +18,7 @@
         chartOpts = {};
       }
       return function(pivotData, opts) {
-        var agg, attrs, base, base1, base2, base3, base4, base5, base6, base7, c, categories, colKey, colKeys, columns, dataColumns, defaults, formatter, fullAggName, groupByTitle, h, hAxisTitle, headers, i, j, k, l, len, len1, len2, len3, len4, m, numCharsInHAxis, numSeries, params, ref, ref1, ref2, ref3, renderArea, result, rotationAngle, row, rowHeader, rowKey, rowKeys, s, scatterData, series, title, titleText, vAxisTitle, val, vals, x, xs, y, colAttrs, rowAttrs;
-        colAttrs = pivotData.colAttrs;
-				rowAttrs = pivotData.rowAttrs;
-        //
-        function returnRowAttrs() {
-        
-        	return rowAttrs;
-        
-        }
-        function returnRowKeys(){
-        	return pivotData.getRowKeys();
-        
-        }
-        
+        var agg, attrs, base, base1, base2, base3, base4, base5, base6, base7, c, categories, colKey, colKeys, columns, dataColumns, defaults, formatter, fullAggName, groupByTitle, h, hAxisTitle, headers, i, j, k, l, len, len1, len2, len3, len4, m, numCharsInHAxis, numSeries, params, ref, ref1, ref2, ref3, renderArea, result, rotationAngle, row, rowHeader, rowKey, rowKeys, s, scatterData, series, title, titleText, vAxisTitle, val, vals, x, xs, y;
         defaults = {
           localeStrings: {
             vs: "vs",
@@ -76,7 +62,6 @@
           }
           return results;
         })();
-        // for xaxis label
         rotationAngle = 0;
         fullAggName = pivotData.aggregatorName;
         if (pivotData.valAttrs.length) {
@@ -171,38 +156,28 @@
             titleText += " " + opts.localeStrings.by + " " + groupByTitle;
           }
         }
-        //title = $("<p>", {
-         // style: "text-align: center; font-weight: bold"
-        //});
-       // title.text(titleText);
+        title = $("<p>", {
+          style: "text-align: center; font-weight: bold"
+        });
+        title.text(titleText);
         formatter = pivotData.getAggregator([], []).format;
         params = {
           axis: {
             rotated: chartOpts.horizontal,
             y: {
-              label:{
-              	text: vAxisTitle,
-                position: 'outer-middle'
-              }, 
-             
+              label: vAxisTitle,
               tick: {}
             },
             x: {
-              label: {
-            			text: hAxisTitle,
-                  position: 'outer-middle' 
-        		 },
+              label: hAxisTitle,
               tick: {
                 rotate: rotationAngle,
                 multiline: false
               }
             }
           },
-          legend: {
-        			position: 'right'
-    			},
           data: {
-            type: chartOpts.type,        
+            type: chartOpts.type,
             order: null
           },
           tooltip: {
@@ -349,3 +324,5 @@
   });
 
 }).call(this);
+
+//# sourceMappingURL=c3_renderers.js.map
